@@ -80,12 +80,12 @@ async function handleUpdate(update, botToken) {
     if (!searchResponse.ok) {
         throw new Error(`API search failed with status: ${searchResponse.status}`);
     }
-    const results = await searchResponse.json();
+    const searchData = await searchResponse.json();
 
     // 2. Respond based on search results
-    if (results && results.length > 0) {
+    if (searchData && searchData.files && searchData.files.length > 0) {
       // Results found
-      const resultCount = results.length;
+      const resultCount = searchData.total_files;
       const responseText = `Found ${resultCount} result(s) for "${query}".`;
       
       const buttonUrl = `https://gods-eye.pages.dev/?q=${encodeURIComponent(query)}&t=files`;
@@ -176,3 +176,4 @@ async function setWebhook(requestUrl, botToken, env) {
     });
   }
 }
+
