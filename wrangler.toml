@@ -4,6 +4,6 @@ main = "src/worker.js"
 compatibility_date = "2025-09-15"
 account_id = "d7fd792641c0f950e8e4979eac0cfe5a"
 
-[[vars]]
+[vars]
 WORKER_URL = "https://group1337xsearchbot.hashhackers.com"
 BOT_TOKEN = "8088507639:AAED3okiYBBERtEmib0mI6HZix4smZosdVs"
